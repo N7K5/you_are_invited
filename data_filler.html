@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/data_filler.css" type="text/css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+
+    <title>Data Filler</title>
+</head>
+<body>
+
+    <div id="form_container">
+
+        <form id="data_form">
+            <span class="ip_title">Recipient's Name:</span> <br />
+            <input type="text" id="envelop_addr_to_name" placeholder="Enter recipient's name" /> <br /><br />
+
+            <span class="ip_title">Recipient's Address:</span> <br />
+            <input type="text" id="envelop_addr_to_addr" placeholder="Enter recipient's address" /> <br /><br />
+
+            <button id="get_url"> Generate URL </button>
+
+        </form>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="result_url">
+
+        <span class="result_title">Generated URL:</span> <br />
+        <textarea id="result_area" disabled="disabled"></textarea>
+
+    </div>
+
+    
+</body>
+<script type="text/javascript" src="script/url_generator.js"></script>
+</html>

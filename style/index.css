@@ -1,0 +1,299 @@
+@font-face {
+    font-family: anydore;
+    src: URL("../res/Anydore.otf");
+}
+
+@font-face {
+    font-family: bughartta;
+    src: URL("../res/Bughartta.ttf");
+}
+
+@keyframes flip_start {
+    0% {
+       transform: perspective(400px) rotateY(0);
+       animation-timing-function: ease-in;
+    }
+    100% {
+        transform: perspective(400px) translateZ(150px) rotateY(90deg);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes flip_end {
+    0% {
+       transform: perspective(400px) translateZ(150px) rotateY(-90deg);
+       animation-timing-function: ease-out;
+    }
+    100% {
+       transform: perspective(400px) rotateY(0deg);
+       animation-timing-function: ease-in;
+    }
+}
+
+
+
+/* --------------- Loader--------------------- */
+
+@keyframes spin {
+    0% {
+       transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes appear {
+    0% {
+       opacity: 0;
+    }
+    30% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+#loader {
+    background-color: aliceblue;
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    left: -50%;
+    top: -50%;
+    z-index: 998;
+}
+#loading_circle {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    top: 35%;
+    left: 20%;
+    border-top: red solid 5px;
+    border-bottom: royalblue solid 5px;
+    border-radius: 200px;
+    animation: spin 1s linear 0s infinite;
+    z-index: 998;
+}
+
+#loading_text {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    bottom: 15%;
+    text-align: center;
+    left: 0%;
+    z-index: 999;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+}
+
+#mobile_warn {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    bottom: 8%;
+    text-align: center;
+    left: 0%;
+    z-index: 999;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+    color: #d5507a;
+    animation: appear 5s linear 0s 1;
+}
+
+/* ------------------------------------------- */
+
+
+
+html, body { height: 100%; width: 100%; margin: 0; }
+div { height: 100%; width: 100%; }
+
+
+#element::-webkit-scrollbar { 
+    display: none; 
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+
+#card {
+    border: red solid 3px;
+    border-radius: 5px;
+    padding: 0px;
+    margin:0px;
+    width: 92%;
+    height: 88%;
+    position: relative;
+    left: 4%;
+    top: 2%;
+    overflow: hidden;
+    background-size: cover;
+    background-size:100% 100%;
+
+
+    /* animation-name: flip_end; */
+    animation-duration: .5s;
+
+}
+
+
+/* -------------------- ENVELOP ------------------------------- */
+#envelop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    padding: 0px;
+    margin: 0px;
+
+
+    background-image: URL("../res/floral_bg_1_r.png");
+    background-size: cover;
+    background-size:100% 100%;
+
+    /* display: none; */
+}
+
+#envelop_addr_to {
+    /* border: violet solid 3px; */
+    margin: 10px;
+    height: 20%;
+    width: 60%;
+    font-family: anydore;
+    font-size: 110%;
+}
+#envelop_addr_to_p1 {
+    font-size: 120%;
+}
+
+#envelop_addr_from {
+    /* border: violet solid 3px; */
+    margin: 10px;
+    height: 25%;
+    width: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    font-family: anydore;
+    font-size: 110%;
+}
+#envelop_addr_from_p1 {
+    font-size: 120%;
+}
+
+#envelop_heart_ani {
+    position: relative;
+    transform: rotate(20deg);
+    width: 20%;
+    top:-0%;
+    right: -63%;
+    opacity: .7;
+    /* border: violet solid 3px; */
+}
+
+
+ /* --------------------- INNER CARD ------------------------------ */
+
+
+#inner_card {
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    padding: 0px;
+    margin: 0px;
+    /* padding-top: 18%; */
+
+
+    background-image: URL("../res/floral_bg_4.png");
+    background-size: cover;
+    background-size:100% 100%;
+
+    /* display: none; */
+}
+
+#program_details {
+    /* border: #d5507a solid 3px; */
+    /* border-radius: 20px; */
+    position: relative;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    text-align: center;
+    height: 20%;
+    padding-left: 1%;
+    padding-top: 3%;
+}
+
+.program_details_title {
+    font-family: bughartta;
+    font-size: 95%;
+    border-bottom: #d5507a solid 2px;
+}
+
+.program_details_body {
+    font-family: anydore;
+    /* border-bottom: #b65574 solid 2px; */
+    font-size: 110%;
+    padding-left: 5%;
+}
+
+#cuple_bottom {
+    position: relative;
+    width: 40%;
+    top:65%;
+    left: -10%;
+    /* right: -63%; */
+    /* opacity: .7; */
+}
+
+/* ----------------------- Paddle ---------------------------- */
+.dot{
+    width:25px;
+    height:25px;
+    position:fixed;
+    background: url(../res/cherry_leaf_3.png);
+    background-size: 100% 100%;
+  }
+
+/* -------------------------------------------------- */
+
+#flip_btn {
+    position: fixed;
+    bottom: 2%;
+    left: 40%;
+    width: 20%;
+    padding: 10px 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#john {
+    position: fixed;
+    z-index: 10;
+    top: 82%;
+    left: 65%;
+    width:200%;
+    height: 100%;
+    padding-top: 4px;
+    background-color: #323232;
+    color: #fff;
+    text-align: center;
+
+    transform: rotate(-45deg);
+    opacity: .6;
+    font-family: anydore;
+    font-size: 80%;
+}
